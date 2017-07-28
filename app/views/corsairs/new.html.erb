@@ -1,0 +1,15 @@
+<h1>Créer un corsair</h1>
+
+ <%= form_for @corsairs do |f| %>
+  <p>
+    <label>Prénom</label><br/>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <label>Age</label><br/>
+    <%= f.text_area :age %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

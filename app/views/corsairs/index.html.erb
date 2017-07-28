@@ -1,0 +1,11 @@
+<h1>La liste des corsairs</h1>
+
+<ul id="corsairs">
+  <% @corsairs.each do |corsaire| %>
+    <li>
+      <%= link_to corsaire.title, corsair_path(corsaire) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "créer un corsaire", new_corsair_path %>
