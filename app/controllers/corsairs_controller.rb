@@ -13,6 +13,7 @@ class CorsairsController < ApplicationController
   end
 
   def edit
+      @corsairs = Corsair.find(params[:id])
   end
 
   def delete
@@ -21,4 +22,12 @@ class CorsairsController < ApplicationController
   def index
       @corsairs = Corsair.all
   end
+    def update
+        def update
+  @corsair = Article.find(params[:id])
+  @corsair.update(corsair_params)
+
+  redirect_to corsair_path(@corsair)
+end
+    end
 end
