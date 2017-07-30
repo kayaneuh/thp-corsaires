@@ -1,6 +1,6 @@
 <h1>Créer un corsair</h1>
 
- <%= form_for @corsairs do |f| %>
+ <%= form_for @corsair do |f| %>
   <p>
     <label>Prénom</label><br/>
     <%= f.text_field :first_name %>
@@ -10,6 +10,6 @@
     <%= f.text_area :age %>
   </p>
   <p>
-    <%= f.submit %>
+    <button type="submit">Créer un corsair</button>
   </p>
 <% end %>

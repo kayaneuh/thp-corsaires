@@ -1,4 +1,14 @@
-<h1><%= @corsairs.first_name %></h1>
-<p><%= @corsairs.age %></p>
+<h1><%= @corsair.first_name %></h1>
+<p><%= @corsair.age %></p>
+<p><%= @corsair.bio %></p>
+<% if @corsair.slack_handle != nil %>
+	<p>Voici le pseudo Slack de <%=@corsair.first_name%> : <%=@corsair.slack_handle%></p>
+<% else %>
+	<p><%=@corsair.first_name%> n'a pas encore renseigné son pseudo Slack !</p>
+<% end %>
+<p><%= @corsair.github_handle %></p>
+<p><%= @corsair.likeness %></p>
 
-<%= link_to "editer", edit_corsair_path(@corsairs) %>
+<%= link_to "editer", edit_corsair_path(@corsair) %>
+
+<p></p>

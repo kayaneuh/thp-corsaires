@@ -1,33 +1,41 @@
 class CorsairsController < ApplicationController
-    
+
   def new
-      @corsairs = Corsair.new
+      @corsair = Corsair.new
   end
-    
+
     def create
-        fail
+      corsair = Corsair.create(corsair_params)
+      redirect_to corsair_path(corsair.id)
     end
-    
+
   def show
-      @corsairs = Corsair.find(params[:id])
+      @corsair = Corsair.find(params[:id])
   end
 
   def edit
-      @corsairs = Corsair.find(params[:id])
+      @corsair = Corsair.find(params[:id])
   end
 
-  def delete
+  def destroy
+    @corsair = Corsair.find(params[:id])
+    @corsair.destroy
+    redirect_to corsairs_path
   end
 
   def index
-      @corsairs = Corsair.all
+      @corsair = Corsair.all
   end
     def update
-        def update
-  @corsair = Article.find(params[:id])
-  @corsair.update(corsair_params)
-
-  redirect_to corsair_path(@corsair)
-end
+      @corsair = Corsair.find(params[:id])
+      @corsair.update(corsair_params)
+      redirect_to corsairs_path
     end
+
+private
+
+def corsair_params
+params.require(:corsair).permit(:first_name, :age, :bio, :slack_handle, :github_handle, :likeness)
+end
+
 end
